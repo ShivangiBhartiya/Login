@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Video Background -->
+    <video id="nebula-video" autoplay muted loop>
+        <source src="nebula.mp4" type="video/mp4"> <!-- Ensure you have the right path -->
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Login Form -->
+    <div class="login-box">
+        <h1>Login</h1>
+        <div class="input-box">
+            <img src="https://img.icons8.com/user" alt="User Icon">
+            <input type="text" placeholder="Username">
+        </div>
+        <div class="input-box">
+            <img src="https://img.icons8.com/lock" alt="Lock Icon">
+            <input type="password" id="password" placeholder="Password">
+            <img src="closed.png" alt="Show Password" id="toggle-eye" style="cursor: pointer;">
+        </div>
+        
+        <!-- Options Section for Remember Me and Forgot Password -->
+        <div class="options-container">
+            <label class="remember-me">
+                <input type="checkbox"> Remember me
+            </label>
+            <a href="#" class="forgot-password">Forgot password?</a>
+        </div>
+
+        <button class="login-btn">Login</button>
+
+        <div class="register-container">
+            <a href="#">Don't have an account? <span>Register</span></a>
+        </div>
+        
+        <div class="divider">OR</div>
+        
+        <div class="google-btn">
+            <img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="Google Icon">
+            <span>Continue with Google</span>
+        </div>
+    </div>
+
+    <script>
+        const toggleEye = document.getElementById('toggle-eye');
+        const passwordInput = document.getElementById('password');
+
+        toggleEye.addEventListener('click', () => {
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleEye.src = "open.png"; // Open eye icon
+            } else {
+                passwordInput.type = 'password';
+                toggleEye.src = "closed.png"; // Closed eye icon
+            }
+        });
+    </script>
+</body>
+</html>
+<!-- HTML for Loading Spinner -->
+<div id="loading-spinner">
+    <div class="planet"></div>
+    <div class="orbit"></div>
+</div>
